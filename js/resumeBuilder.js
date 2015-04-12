@@ -116,7 +116,7 @@ var projects = {
 		{
 			"title":	"Search for Extraterrestial Intelligence with the Drake Equation",
 			"dates":	"1996 - Ongoing",
-			"description":	"Using MathJax: $$N = R^{*} \\cdot f_{p} \\cdot R_{e} \\cdot n_{e} \\cdot f_{l} \\cdot f_{i} \\cdot f_{l} \\cdot L$$",
+			"description":	"Using MathJax: $$N = R^{*} \\cdot f_{p} \\cdot n_{e} \\cdot f_{l} \\cdot f_{i} \\cdot f_{c} \\cdot L$$",
 			"images": [
 					"images/setilogo.gif",
 					"images/lion.png",
