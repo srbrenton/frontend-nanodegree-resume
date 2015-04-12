@@ -68,13 +68,13 @@ var work = {
 			"title":	"Frameman",
 			"location":	"Garden Grove, CA",
 			"dates":	"1977-1979",
-			"description":	"Install SxS and X-bar Cross Connects"
+			"description":	"Install X-bar and Special Circuit Cross Connects"
 		},
 		{
 			"employer":	"Pacific Bell",
 			"title":	"Repair Clerk",
 			"location":	"Orange, CA",
-			"dates":	"1974-1976",
+			"dates":	"1975-1976",
 			"description":	"Answer 611 Telephone Repair Calls"
 		},
 		{
@@ -116,19 +116,21 @@ var projects = {
 		{
 			"title":	"Cold Fusion",
 			"dates":	"2011-2014",
-			"description":	"Provide the world with limitless energy",
+			"description":	"Consulted with ancient Egyptians in order to provide the world with limitless energy",
 			"images": [
 					"images/Aten_disk.jpg",
-					"images/yoda.jpg"
+					"images/yoda.jpg",
+					"images/lion.png"
 				]
 		},
 		{
 			"title":	"Milky Way Exploration",
 			"dates":	"2008-2010",
-			"description":	"Looking for Yoda",
+			"description":	"Helped Luke Skywalker search for Yoda",
 			"images": [
 					"images/yoda.jpg",
-					"images/lion.png"
+					"images/lion.png",
+					"images/Aten_disk.jpg"
 				]
 		}
 	],
@@ -140,11 +142,9 @@ var projects = {
 			$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.project[myProject].title));
 			$(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.project[myProject].dates));
 			$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.project[myProject].description));
-	$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.project[1].images[0]));
-	$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.project[1].images[1]));
-//			for ( myImage in projects.project.images ) {
-//				$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.project["myProject"].images["myImage"]));
-//			}
+			for ( var imageCount = 0; imageCount < projects.project[myProject].images.length; imageCount++ ) {
+				$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.project[myProject].images[imageCount]));
+			}
 		}
 	}
 }
@@ -227,7 +227,7 @@ var education = {
 			$(".education-entry:last").append(formattedSchoolName);
 			$(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[key].dates));
 			$(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[key].location));
-			console.log("key: " + education.schools[key].majors);
+//			console.log("key: " + education.schools[key].majors);
 			var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[key].majors);
 			if ( /,/.test(formattedMajors) ) {
 				formattedMajors = formattedMajors.replace("Major", "Majors");
