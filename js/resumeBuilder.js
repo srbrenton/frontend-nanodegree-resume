@@ -1,7 +1,7 @@
 
 var bio = {
 	"name" : "Steve Brenton",
-	"role" : "5ESS System Analyst",
+	"role" : "5ESS Systems Analyst",
 	"contacts" : {
 		"mobile": "562-555-1234",
 		"email": "sbrenton@AnyISP.net",
@@ -11,7 +11,7 @@ var bio = {
 		},
 	"picture" : "images/steve.jpg",
 	"welcome" : "Web Developers, look out!",
-	"skills" : [  "HTML", "PHP", "JavaScript", "C/Unix", "Java", "5ESS", "1AESS" ],
+	"skills" : [  "HTML", "PHP", "JavaScript", "C/Unix", "Perl", "Java", "5ESS", "1AESS" ],
 };
 
 bio.display = function() {
@@ -40,23 +40,42 @@ bio.display = function() {
 			$("#skills").append(HTMLskills.replace("%data%", bio.skills[index++]));
 		}
 	}
+
+	formattedContact = HTMLcontactGeneric.replace("%contact%","email");
+	formattedContact = formattedContact.replace("%data%",bio.contacts.email);
+	$("#footerContacts").append(formattedContact);
+
 }
 
 var work = {
 	"jobs": [
 		{
-			"employer":	"Arby's Roast Beef",
-			"title":	"Worker",
+			"employer":	"Pacific Bell",
+			"title":	"Systems Analyst",
 			"location":	"Anaheim, CA",
-			"dates":	"1970-1971",
-			"description":	"Fast Food Worker"
+			"dates":	"1987 - Current",
+			"description":	"Tier 3 Switching System Support"
 		},
 		{
 			"employer":	"Pacific Bell",
-			"title":	"Motorized Messenger",
+			"title":	"Switchman",
+			"location":	"Santa Ana, CA",
+			"dates":	"1980-1986",
+			"description":	"1AESS & 5ESS Surveillance and Analysis"
+		},
+		{
+			"employer":	"Pacific Bell",
+			"title":	"Frameman",
+			"location":	"Garden Grove, CA",
+			"dates":	"1977-1979",
+			"description":	"Install SxS and X-bar Cross Connects"
+		},
+		{
+			"employer":	"Pacific Bell",
+			"title":	"Repair Clerk",
 			"location":	"Orange, CA",
-			"dates":	"1971-1972",
-			"description":	"Deliver Company Mail"
+			"dates":	"1974-1976",
+			"description":	"Answer 611 Telephone Repair Calls"
 		},
 		{
 			"employer":	"Pacific Bell",
@@ -66,18 +85,18 @@ var work = {
 			"description":	"Install SxS and X-bar Cross Connects"
 		},
 		{
-			"employer":	"Orange County Food Service",
-			"title":	"Ice Specialist",
-			"location":	"Placentia, CA",
-			"dates":	"1973-1974",
-			"description":	"Fill Catering Trucks with Ice"
+			"employer":	"Pacific Bell",
+			"title":	"Motorized Messenger",
+			"location":	"Orange, CA",
+			"dates":	"1971-1972",
+			"description":	"Deliver Company Mail"
 		},
 		{
-			"employer":	"Pacific Bell",
-			"title":	"Repair Clerk",
-			"location":	"Orange",
-			"dates":	"1974-1976",
-			"description":	"Answer 611 Telephone Repair Calls"
+			"employer":	"Arby's Roast Beef",
+			"title":	"Worker",
+			"location":	"Anaheim, CA",
+			"dates":	"1970-1971",
+			"description":	"Fast Food Worker"
 		}
 	],
 	display: function() {
@@ -133,28 +152,12 @@ var projects = {
 var education = {
 	"schools": [
 			{
-				"name": "Cory Elementary School",
-				"location": "Denver, CO",
-				"degree": "1st Grade",
-				"majors":["Arithmetic", "Printing", "Finger Painting"],
-				"dates": "1959-1960",
-				"url": "http://cory.dpsk12.org/"
-			},
-			{
-				"name": "Marshall Elementary School",
-				"location": "Anaheim, CA",
-				"degree": "2nd Grade",
-				"majors":["Arithmetic", "Cursive Writing", "Reading"],
-				"dates": "1960-1961",
-				"url": "http://marshall.acsd.us/"
-			},
-			{
-				"name": "Robert M. Pyles Elementary School",
-				"location": "Stanton, CA",
-				"degree": "3rd - 5th Grade",
-				"majors":["Arithmetic", "Report Writing", "Reading"],
-				"dates": "1961-1964",
-				"url": "http://www.msd.k12.ca.us/index.php/rmp-home"
+				"name": "California State College Fullerton",
+				"location": "Fullerton, CA",
+				"degree": "na",
+				"majors":["English"],
+				"dates": "1974-1975",
+				"url": "http://www.fullerton.edu"
 			},
 			{
 				"name": "California State College Fullerton (CSUF)",
@@ -165,26 +168,50 @@ var education = {
 				"url": "http://www.fullerton.edu"
 			},
 			{
-				"name": "California State College Fullerton",
-				"location": "Fullerton, CA",
-				"degree": "na",
-				"majors":["English"],
-				"dates": "1974-1975",
-				"url": "http://www.fullerton.edu"
+				"name": "Loara High School",
+				"location": "Anaheim, CA",
+				"degree": "HS Dilploma",
+				"majors":["College Prep"],
+				"dates": "1967-1970",
+				"url": "http://loara.auhsd.k12.ca.us/"
+			},
+			{
+				"name": "Robert M. Pyles Elementary School",
+				"location": "Stanton, CA",
+				"degree": "3rd - 5th Grade",
+				"majors":["Arithmetic", "Report Writing", "Reading"],
+				"dates": "1961-1964",
+				"url": "http://www.msd.k12.ca.us/index.php/rmp-home"
+			},
+			{
+				"name": "Marshall Elementary School",
+				"location": "Anaheim, CA",
+				"degree": "2nd Grade",
+				"majors":["Arithmetic", "Cursive Writing", "Reading"],
+				"dates": "1960-1961",
+				"url": "http://marshall.acsd.us/"
+			},
+			{
+				"name": "Cory Elementary School",
+				"location": "Denver, CO",
+				"degree": "1st Grade",
+				"majors":["Arithmetic", "Printing", "Finger Painting"],
+				"dates": "1959-1960",
+				"url": "http://cory.dpsk12.org/"
 			}
 	],
 	"onlineCourses": [
 			{
-				"title": "",
-				"school": "",
-				"dates": "",
-				"url": ""
+				"title": "R Programming",
+				"school": "Coursera",
+				"dates": "2014",
+				"url": "https://www.coursera.org/course/rprog"
 			},
 			{
-				"title": "",
-				"school": "",
-				"dates": "",
-				"url": ""
+				"title": "Intro to HTML and CSS",
+				"school": "Udacity",
+				"dates": "2015",
+				"url": "https://www.udacity.com/course/ud304"
 			}
 	],
 	display: function() {
@@ -194,26 +221,35 @@ var education = {
 
 		
 		for ( key in education.schools ) {
-			formattedSchoolName = HTMLschoolName.replace("#",education.schools[key].url)
-			formattedSchoolName = formattedSchoolName.replace("%data%",education.schools[key].name);
-			formattedSchoolName += HTMLschoolDegree.replace("%data%",education.schools[key].degree);
+			formattedSchoolName = HTMLschoolName.replace("#", education.schools[key].url)
+			formattedSchoolName = formattedSchoolName.replace("%data%", education.schools[key].name);
+			formattedSchoolName += HTMLschoolDegree.replace("%data%", education.schools[key].degree);
 			$(".education-entry:last").append(formattedSchoolName);
-			$(".education-entry:last").append(HTMLschoolDates.replace("%data%",education.schools[key].dates));
-			$(".education-entry:last").append(HTMLschoolLocation.replace("%data%",education.schools[key].location));
+			$(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[key].dates));
+			$(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[key].location));
 			console.log("key: " + education.schools[key].majors);
-			var formattedMajors = HTMLschoolMajor.replace("%data%",education.schools[key].majors);
+			var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[key].majors);
 			if ( /,/.test(formattedMajors) ) {
-				formattedMajors = formattedMajors.replace("Major","Majors");
+				formattedMajors = formattedMajors.replace("Major", "Majors");
 				formattedMajors = formattedMajors.replace(/,/g,", ");
 			}
 			$(".education-entry:last").append(formattedMajors);
 		}
+
+		$(".education-entry:last").append(HTMLonlineClasses);
+		for ( key in education.onlineCourses ) {
+			formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[key].title);
+			formattedTitle += HTMLonlineSchool.replace("%data%", education.onlineCourses[key].school);
+			formattedTitle = formattedTitle.replace("#", education.onlineCourses[key].url);
+			$(".education-entry:last").append(formattedTitle);
+			$(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.onlineCourses[key].dates));
+			onlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[key].url);
+			onlineURL = onlineURL.replace("#", education.onlineCourses[key].url);
+			$(".education-entry:last").append(onlineURL);
+
+		}
 	}
 }
-
-console.log("job count " + work.jobs.length);
-
-
 
 bio.display();
 work.display();

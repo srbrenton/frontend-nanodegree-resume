@@ -23,7 +23,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999999;
+  color: #006189;
   line-height: 29px;
   padding: 10px;
 }
@@ -82,7 +82,7 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #F3F3F3;
+  color: #E10052;
   line-height: 28px;
 }
 
@@ -93,6 +93,11 @@ a {
 
 .orange {
   background-color: #F5AE23;
+}
+
+.lime {
+  background-color: #00FF00;
+  color: #005B1E;
 }
 
 .orange-text {
@@ -112,6 +117,10 @@ a {
 
 .dark-gray {
   background-color: #4A4A4A;
+}
+
+.dark-green {
+  background-color: #005B1E;
 }
 
 /* TODO: Replace with image later */
