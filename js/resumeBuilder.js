@@ -11,7 +11,7 @@ var bio = {
 		},
 	"picture" : "images/steve.jpg",
 	"welcome" : "Web Developers, look out!",
-	"skills" : [  "HTML", "PHP", "JavaScript", "C/Unix", "Perl", "Java", "5ESS", "1AESS" ],
+	"skills" : [  "HTML", "PHP", "JavaScript", "C/Unix", "Perl", "Java", "$$\\TeX$$", "$$\\LaTeX$$", "5ESS", "1AESS" ],
 };
 
 bio.display = function() {
@@ -114,9 +114,20 @@ var work = {
 var projects = {
 	"project": [
 		{
+			"title":	"Search for Extraterrestial Intelligence with the Drake Equation",
+			"dates":	"1996 - Ongoing",
+			"description":	"Using MathJax: $$N = R^{*} \\cdot f_{p} \\cdot R_{e} \\cdot n_{e} \\cdot f_{l} \\cdot f_{i} \\cdot f_{l} \\cdot L$$",
+			"images": [
+					"images/setilogo.gif",
+					"images/lion.png",
+					"images/Aten_disk.jpg",
+					"images/yoda.jpg"
+				]
+		},
+		{
 			"title":	"Cold Fusion",
 			"dates":	"2011-2014",
-			"description":	"Consulted with ancient Egyptians in order to provide the world with limitless energy",
+			"description":	"Consulted with ancient Egyptians in order to provide the world with limitless energy - $$E=mc^{2}$$",
 			"images": [
 					"images/Aten_disk.jpg",
 					"images/yoda.jpg",
@@ -126,13 +137,13 @@ var projects = {
 		{
 			"title":	"Milky Way Exploration",
 			"dates":	"2008-2010",
-			"description":	"Helped Luke Skywalker search for Yoda",
+			"description":	"Helped Luke Skywalker search for Yoda in the final frontier - $$\\infty$$",
 			"images": [
 					"images/yoda.jpg",
 					"images/lion.png",
 					"images/Aten_disk.jpg"
 				]
-		}
+		},
 	],
 	"display": function() {
 		var myProject;
