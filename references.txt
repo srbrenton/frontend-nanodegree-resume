@@ -1,0 +1,18 @@
+References:
+
+https://www.mathjax.org
+http://www.tug.org/
+http://www.seti.org/
+http://www.seti.org/drakeequation
+http://en.wikipedia.org/wiki/Aten
+
+Various links in Udacity Intro to HTML
+Various links in Udacity Javascript Basics
+
+Goodman "Javascript Bible" 6th Edition
+O'Reilly CSS Pocket Reference 2nd Edition
+Castro "HTML for the WWW" 5th Edition
+
+
+
+

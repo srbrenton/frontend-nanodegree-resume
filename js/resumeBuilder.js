@@ -1,4 +1,3 @@
-
 var bio = {
 	"name" : "Steve Brenton",
 	"role" : "5ESS Systems Analyst",
@@ -12,9 +11,7 @@ var bio = {
 	"picture" : "images/steve.jpg",
 	"welcome" : "Web Developers, look out!",
 	"skills" : [  "HTML", "PHP", "JavaScript", "C/Unix", "Perl", "Java", "$$\\TeX$$", "$$\\LaTeX$$", "5ESS", "1AESS" ],
-};
-
-bio.display = function() {
+	"display": function() {
 
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -44,7 +41,7 @@ bio.display = function() {
 	formattedContact = HTMLcontactGeneric.replace("%contact%","email");
 	formattedContact = formattedContact.replace("%data%",bio.contacts.email);
 	$("#footerContacts").append(formattedContact);
-
+	}
 }
 
 var work = {
@@ -99,7 +96,7 @@ var work = {
 			"description":	"Fast Food Worker"
 		}
 	],
-	display: function() {
+	"display": function() {
 		for ( job in work.jobs ) {
 			$("#workExperience").append(HTMLworkStart);
 			var jobItem = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -114,49 +111,51 @@ var work = {
 var projects = {
 	"project": [
 		{
-			"title":	"Search for Extraterrestial Intelligence with the Drake Equation",
-			"dates":	"1996 - Ongoing",
-			"description":	"Using MathJax: $$N = R^{*} \\cdot f_{p} \\cdot n_{e} \\cdot f_{l} \\cdot f_{i} \\cdot f_{c} \\cdot L$$",
-			"images": [
-					"images/setilogo.gif",
-					"images/lion.png",
-					"images/Aten_disk.jpg",
-					"images/yoda.jpg"
-				]
+		"title":	"Search for Extraterrestial Intelligence with the Drake Equation",
+		"dates":	"1996 - Ongoing",
+		"description":	"Using MathJax: $$N = R^{*} \\cdot f_{p} \\cdot n_{e} \\cdot f_{l} \\cdot f_{i} \\cdot f_{c} \\cdot L$$",
+		"images": [
+			"images/setilogo.gif",
+			"images/lion.png",
+			"images/Aten_disk.jpg",
+			"images/yoda.jpg"
+		]
 		},
 		{
-			"title":	"Cold Fusion",
-			"dates":	"2011-2014",
-			"description":	"Consulted with ancient Egyptians in order to provide the world with limitless energy - $$E=mc^{2}$$",
-			"images": [
-					"images/Aten_disk.jpg",
-					"images/yoda.jpg",
-					"images/lion.png"
-				]
+		"title":	"Cold Fusion",
+		"dates":	"2011-2014",
+		"description":	"Consulted with ancient Egyptians in order to provide the world with limitless energy - $$E=mc^{2}$$",
+		"images": [
+			"images/Aten_disk.jpg",
+			"images/yoda.jpg",
+			"images/lion.png"
+		]
 		},
 		{
-			"title":	"Milky Way Exploration",
-			"dates":	"2008-2010",
-			"description":	"Helped Luke Skywalker search for Yoda in the final frontier - $$\\infty$$",
-			"images": [
-					"images/yoda.jpg",
-					"images/lion.png",
-					"images/Aten_disk.jpg"
-				]
-		},
+		"title":	"Milky Way Exploration",
+		"dates":	"2008-2010",
+		"description":	"Helped Luke Skywalker search for Yoda in the final frontier - $$\\infty$$",
+		"images": [
+			"images/yoda.jpg",
+			"images/lion.png",
+			"images/Aten_disk.jpg"
+		]
+		}
 	],
 	"display": function() {
-		var myProject;
-		var myImage;
-		for ( myProject in projects.project ) {
-			$("#projects").append(HTMLprojectStart);
-			$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.project[myProject].title));
-			$(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.project[myProject].dates));
-			$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.project[myProject].description));
-			for ( var imageCount = 0; imageCount < projects.project[myProject].images.length; imageCount++ ) {
-				$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.project[myProject].images[imageCount]));
-			}
+	var myProject;
+	var myImage;
+
+	for ( myProject in projects.project ) {
+		$("#projects").append(HTMLprojectStart);
+		$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.project[myProject].title));
+		$(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.project[myProject].dates));
+		$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.project[myProject].description));
+
+		for ( var imageCount = 0; imageCount < projects.project[myProject].images.length; imageCount++ ) {
+			$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.project[myProject].images[imageCount]));
 		}
+	}
 	}
 }
 
@@ -198,7 +197,7 @@ var education = {
 				"name": "Marshall Elementary School",
 				"location": "Anaheim, CA",
 				"degree": "2nd Grade",
-				"majors":["Arithmetic", "Cursive Writing", "Reading"],
+				"majors":["Arithmetic", "Cursive Writing", "Reading", "Heads Up 7 Up"],
 				"dates": "1960-1961",
 				"url": "http://marshall.acsd.us/"
 			},
@@ -206,7 +205,7 @@ var education = {
 				"name": "Cory Elementary School",
 				"location": "Denver, CO",
 				"degree": "1st Grade",
-				"majors":["Arithmetic", "Printing", "Finger Painting"],
+				"majors":["Arithmetic", "Printing", "Finger Painting", "Duck-Duck-Goose", "Running with Scissors"],
 				"dates": "1959-1960",
 				"url": "http://cory.dpsk12.org/"
 			}
@@ -225,11 +224,10 @@ var education = {
 				"url": "https://www.udacity.com/course/ud304"
 			}
 	],
-	display: function() {
+	"display": function() {
 
 		var formattedSchoolName;
 		$("#education").append(HTMLschoolStart);
-
 		
 		for ( key in education.schools ) {
 			formattedSchoolName = HTMLschoolName.replace("#", education.schools[key].url)
@@ -268,4 +266,3 @@ projects.display();
 education.display();
 
 $("#mapDiv").append(googleMap);
-
